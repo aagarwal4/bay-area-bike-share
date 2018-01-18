@@ -5,10 +5,12 @@ import pandas as pd
 from Tkinter import Tk, Label, Button
 import urllib
 import simplejson
+from tktest import *
 
-address = raw_input("Enter your address: ")
+#address = raw_input("Enter your address: ")
 #address = "101 Howard Street, San Francisco"
-api_key = ***
+address = vals[0]
+api_key = "AIzaSyC0oghEW58_AKT0VGxWKA0VlVi2XiS_ZiQ"
 api_response = requests.get('https://maps.googleapis.com/maps/api/geocode/json?address={0}&key={1}'.format(address, api_key))
 api_response_dict = api_response.json()
 
@@ -39,7 +41,9 @@ def prediction_lookup(stations_df, date, hour):
     filtered_df['rank'] = range(1,len(filtered_df)+1)
     return filtered_df[['rank', 'station_name', 'distance', 'duration', 'metric']]
 
-date = '18-01-2018'
-hour = 1
-print prediction_lookup(station_google_info.sort_values('distance_value', ascending = 1).head(), date, hour)
+#date = '18-01-2018'
+#hour = 1
+hour = vals[1]
+date = vals[2]
+final_df = prediction_lookup(station_google_info.sort_values('distance_value', ascending = 1).head(), date, hour)
     

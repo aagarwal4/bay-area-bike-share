@@ -1,0 +1,71 @@
+id,station_name,date,hour,metric
+2,San Jose Diridon Caltrain Station,18-01-2018,1,0.215744193
+3,San Jose Civic Center,18-01-2018,1,0.641319041
+4,Santa Clara at Almaden,18-01-2018,1,0.315558678
+5,Adobe on Almaden,18-01-2018,1,0.690241711
+6,San Pedro Square,18-01-2018,1,0.945240109
+7,Paseo de San Antonio,18-01-2018,1,0.206346652
+8,San Salvador at 1st,18-01-2018,1,0.130874571
+9,Japantown,18-01-2018,1,0.486748602
+10,San Jose City Hall,18-01-2018,1,0.516714941
+11,MLK Library,18-01-2018,1,0.516554875
+12,SJSU 4th at San Carlos,18-01-2018,1,0.69780778
+13,St James Park,18-01-2018,1,0.569893844
+14,Arena Green / SAP Center,18-01-2018,1,0.884791824
+16,SJSU - San Salvador at 9th,18-01-2018,1,0.883845246
+21,Franklin at Maple,18-01-2018,1,0.907583981
+22,Redwood City Caltrain Station,18-01-2018,1,0.550838875
+23,San Mateo County Center,18-01-2018,1,0.716046818
+24,Redwood City Public Library,18-01-2018,1,0.609244543
+25,Stanford in Redwood City,18-01-2018,1,0.897641733
+26,Redwood City Medical Center,18-01-2018,1,0.524530223
+27,Mountain View City Hall,18-01-2018,1,0.668519551
+28,Mountain View Caltrain Station,18-01-2018,1,0.188752732
+29,San Antonio Caltrain Station,18-01-2018,1,0.65947056
+30,Evelyn Park and Ride,18-01-2018,1,0.021760274
+31,San Antonio Shopping Center,18-01-2018,1,0.200523681
+32,Castro Street and El Camino Real,18-01-2018,1,0.176257313
+33,Rengstorff Avenue / California Street,18-01-2018,1,0.734405739
+34,Palo Alto Caltrain Station,18-01-2018,1,0.160318897
+35,University and Emerson,18-01-2018,1,0.763753176
+36,California Ave Caltrain Station,18-01-2018,1,0.046486269
+37,Cowper at University,18-01-2018,1,0.734797077
+38,Park at Olive,18-01-2018,1,0.604865225
+41,Clay at Battery,18-01-2018,1,0.427323699
+42,Davis at Jackson,18-01-2018,1,0.627937174
+45,Commercial at Montgomery,18-01-2018,1,0.245630526
+46,Washington at Kearney,18-01-2018,1,0.133914237
+47,Post at Kearney,18-01-2018,1,0.912845539
+48,Embarcadero at Vallejo,18-01-2018,1,0.563032808
+49,Spear at Folsom,18-01-2018,1,0.719345014
+50,Harry Bridges Plaza (Ferry Building),18-01-2018,1,0.174702346
+51,Embarcadero at Folsom,18-01-2018,1,0.345035464
+39,Powell Street BART,18-01-2018,1,0.800118288
+54,Embarcadero at Bryant,18-01-2018,1,0.653998852
+55,Temporary Transbay Terminal (Howard at Beale),18-01-2018,1,0.687771375
+56,Beale at Market,18-01-2018,1,0.184457022
+57,5th at Howard,18-01-2018,1,0.799075759
+58,San Francisco City Hall,18-01-2018,1,0.685949883
+59,Golden Gate at Polk,18-01-2018,1,0.278520582
+60,Embarcadero at Sansome,18-01-2018,1,0.548056118
+61,2nd at Townsend,18-01-2018,1,0.968028571
+62,2nd at Folsom,18-01-2018,1,0.454349971
+63,Howard at 2nd,18-01-2018,1,0.378656477
+64,2nd at South Park,18-01-2018,1,0.088265512
+65,Townsend at 7th,18-01-2018,1,0.935677253
+66,South Van Ness at Market,18-01-2018,1,0.102160525
+67,Market at 10th,18-01-2018,1,0.937872872
+68,Yerba Buena Center of the Arts (3rd @ Howard),18-01-2018,1,0.551170924
+69,San Francisco Caltrain 2 (330 Townsend),18-01-2018,1,0.194615528
+70,San Francisco Caltrain (Townsend at 4th),18-01-2018,1,0.29868914
+71,Powell at Post (Union Square),18-01-2018,1,0.576422005
+72,Civic Center BART (7th at Market),18-01-2018,1,0.788856911
+73,Grant Avenue at Columbus Avenue,18-01-2018,1,0.38419918
+74,Steuart at Market,18-01-2018,1,0.763382751
+75,Mechanics Plaza (Market at Battery),18-01-2018,1,0.782575697
+76,Market at 4th,18-01-2018,1,0.333296293
+77,Market at Sansome,18-01-2018,1,0.80032968
+80,Santa Clara County Civic Center,18-01-2018,1,0.975144216
+82,Broadway St at Battery St,18-01-2018,1,0.980583184
+83,Mezes Park,18-01-2018,1,0.015670142
+84,Ryland Park,18-01-2018,1,0.551195385
