@@ -1,0 +1,5 @@
+,prediction_available,prediction_traffic,station_id,lat_x,long_x,hour,month,year,dayofweek,city_x,station_id,id,station_name,lat_y,long_y,dock_count,city_y,installation_date,date,metric
+96154,8.654166667,0.855314997,56,37.792251,-122.397086,10,1,2018,3,0,22,56,Beale at Market,37.792251,-122.397086,19,San Francisco,8/20/13,01-24-2018,0.500499035
+83009,6.116666667,-0.427714021,55,37.789756,-122.394643,10,1,2018,3,0,23,55,Temporary Transbay Terminal (Howard at Beale),37.789756,-122.394643,23,San Francisco,8/20/13,01-24-2018,0.247345767
+32057,5.3,0.053623937,74,37.794139,-122.394434,10,1,2018,3,0,14,74,Steuart at Market,37.794139,-122.394434,23,San Francisco,8/25/13,01-24-2018,0.232766258
+78676,8.270833333,-0.283190868,49,37.790302,-122.390637,10,1,2018,3,0,20,49,Spear at Folsom,37.790302,-122.390637,19,San Francisco,8/20/13,01-24-2018,0.420402235

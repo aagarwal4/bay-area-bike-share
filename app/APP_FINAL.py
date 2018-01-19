@@ -16,8 +16,9 @@ except ImportError:  # Python 3
     import tkinter.font as tkFont
     import tkinter.ttk as ttk
     
-fields = ['hour', 'day']
-OPTIONS = [[1, 2], ['18-01-2018', '19-01-2018']]
+fields = ['Hour', 'Date']
+OPTIONS = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ,12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+           ['01-19-2018', '01-20-2018', '01-21-2018', '01-22-2018', '01-23-2018', '01-24-2018', '01-25-2018', '01-26-2018']]
 
 def app_lookup(vals):
 
@@ -49,7 +50,7 @@ def app_lookup(vals):
                                         'distance_value': distance_response_dict['rows'][0]['elements'][0]['distance']['value']}, ignore_index=True)
 
     stations_df = station_google_info.sort_values('distance_value', ascending = 1).head()
-    df = pd.read_csv("predictions.csv")
+    df = pd.read_csv("nearest_station_df.csv")
     filtered_df = df[(df['station_name'].isin(stations_df['station_name'])) & (df['hour'] == int(vals[1])) & (df['date'] == vals[2])]
     filtered_df = filtered_df.join(stations_df.set_index('station_name'), on = 'station_name').sort_values('metric', ascending = 0)
     filtered_df['rank'] = range(1,len(filtered_df)+1)
@@ -70,10 +71,10 @@ def makeform(root, fields, OPTIONS):
         variable.set(OPTIONS[i][0]) # default value
         row = Frame(root)
         lab = Label(row, width=15, text=fields[i], anchor='w')
-        row.pack(side=TOP, fill=X, padx=5, pady=5)
         lab.pack(side=LEFT)
-        w = OptionMenu(root, variable, *OPTIONS[i])
-        w.pack()
+        w = OptionMenu(row, variable, *OPTIONS[i])
+        w.pack(side=LEFT)
+        row.pack(side=TOP, fill=X, padx=5, pady=5)
         entries.append((fields[i], variable))
         #val = variable.get()
     return entries   
@@ -88,80 +89,25 @@ def fetch(entries):
         print('%s: "%s"' % (field, text)) 
         vals.append(text)
 
+    
     if vals[0] != "":
         df = app_lookup(vals)
-        print df
         print vals[0]
-        global car_header
-        global car_list
-        car_header = list(df.columns.values)
+ #       car_header = list(df.columns.values)
+        print df
         car_list = [tuple(row[1]) for row in df.iterrows()]
-        root.title("Multicolumn Treeview/Listbox")
-        global listbox
-        listbox = MultiColumnListbox()
-    '''
-    if vals[0] != "":
-        df=app_lookup(vals)
-
-        x = df.to_string(header=True,
-                  index=False,
-                  index_names=False).split("\n")
-        vals = [ele for ele in x]
-        #print df
-        for item in vals:
-           # print item
-            listbox.insert(END, item)
-             
-    if str(vals[0]) == '101':
-        for item in ["one", "zero", "one"]:
-            listbox.insert(END, item)
-    elif str(vals[0]) == '102':
-        for item in ["one", "zero", "two"]:
-            listbox.insert(END, item)
-    '''
-#    else:
-#        for item in ["zero", "zero", "zero"]:
-#            listbox.insert(END, item)    
+        for col in car_header:
+            tree.heading(col, text=col.title())
+        for item in car_list:
+            tree.insert('', 'end', values=item)   
     return vals
 
 
-class MultiColumnListbox(object):
-    """use a ttk.TreeView as a multicolumn ListBox"""
-
-    def __init__(self):
-        self.tree = None
-        self._setup_widgets()
-        self._build_tree()
-
-    def _setup_widgets(self):
-        container = ttk.Frame()
-        container.pack(fill='both', expand=True)
-        global tree
-        # create a treeview with dual scrollbars
-        self.tree = ttk.Treeview(columns=car_header, show="headings")
-        vsb = ttk.Scrollbar(orient="vertical",
-            command=self.tree.yview)
-        hsb = ttk.Scrollbar(orient="horizontal",
-            command=self.tree.xview)
-        self.tree.configure(yscrollcommand=vsb.set,
-            xscrollcommand=hsb.set)
-        self.tree.grid(column=0, row=0, sticky='nsew', in_=container)
-        vsb.grid(column=1, row=0, sticky='ns', in_=container)
-        hsb.grid(column=0, row=1, sticky='ew', in_=container)
-        container.grid_columnconfigure(0, weight=1)
-        container.grid_rowconfigure(0, weight=1)
-
-    def _build_tree(self):
-        for col in car_header:
-            self.tree.heading(col, text=col.title())
-
-        for item in car_list:
-            self.tree.insert('', 'end', values=item)
 
 def reset_station():
 #     listbox.delete(0, END)
      #listbox.insert(END, '')
-    tree.delete(0,END)
+    tree.delete(*tree.get_children())
             
 if __name__ == '__main__':
     root = Tk()
@@ -172,15 +118,24 @@ if __name__ == '__main__':
     global vals
     vals = fetch(ents)
     print vals
-    
-    b1 = Button(root, text='Show', command=(lambda e=ents: fetch(e)))
-    b1.pack(side=BOTTOM, padx=5, pady=5)
+
+    fm = Frame(root)
+    b1 = Button(fm, text='Show', command=(lambda e=ents: fetch(e)))
+    b1.pack(side=LEFT, padx=5, pady=5)
  #   lb = Listbox(root)
     
-    b = Button(root, text="Reset",
+    b = Button(fm, text="Reset",
            command=reset_station)
-    b.pack(side=BOTTOM, padx=5, pady=5)
-
+    b.pack(side=LEFT, padx=5, pady=5)
+    fm.pack(fill=BOTH, expand = YES)
+    car_header = ['rank', 'station_name', 'distance', 'duration', 'metric']
+    root.title("GoBike Station Recommendation")
+    container = ttk.Frame()
+    container.pack(fill='both', expand=True)
+    tree = ttk.Treeview(columns=car_header, show="headings")
+    tree.grid(column=0, row=0, sticky='nsew', in_=container)
+    container.grid_columnconfigure(0, weight=1)
+    container.grid_rowconfigure(0, weight=1)
     
     root.mainloop()
 
