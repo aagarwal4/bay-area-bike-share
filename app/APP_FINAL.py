@@ -111,6 +111,7 @@ def reset_station():
             
 if __name__ == '__main__':
     root = Tk()
+    Label(root, text = "GoBike Station Recommendation", fg = "blue", font = "Verdana 20 bold").pack()
  #   listbox = Listbox(root, width = 150, height = 10)
 #    listbox.pack(expand = True)
     ents = makeform(root, fields, OPTIONS)
@@ -129,7 +130,7 @@ if __name__ == '__main__':
     b.pack(side=LEFT, padx=5, pady=5)
     fm.pack(fill=BOTH, expand = YES)
     car_header = ['rank', 'station_name', 'distance', 'duration', 'metric']
-    root.title("GoBike Station Recommendation")
+    root.title("GoApp")
     container = ttk.Frame()
     container.pack(fill='both', expand=True)
     tree = ttk.Treeview(columns=car_header, show="headings")
